@@ -1,5 +1,7 @@
 import UIKit
 
+//MARK:- return proeprties as struct
+
 /// definition of anchors and sizes of constraints, used as return parameters
 public struct AnchoredConstraints {
     
@@ -14,10 +16,8 @@ public struct AnchoredConstraints {
 
 public extension UIView {
     
-    /// add an array of views on a view
-    func addSubviews(_ views: UIView...) {
-        views.forEach({addSubview($0)})
-    }
+    
+//     MARK:- properties
     
     /// safe area top anchor
     var safeTopAnchor: NSLayoutYAxisAnchor {
@@ -50,6 +50,9 @@ public extension UIView {
         }
         return self.trailingAnchor
     }
+    
+    
+//    MARK:- base anchor methods
     
     /// Apply anchors, paddings and size to specific view
     /// - Parameters:
@@ -140,6 +143,9 @@ public extension UIView {
             trailingAnchor.constraint(equalTo: superviewTrailingAnchor, constant: -padding.right).isActive = true
         }
     }
+    
+    
+//    MARK:- Base anchor methods depending on X and Y position on axis of view
     
     /// Apply X anchor to center of super view with padding
     /// - Parameter constant: padding for X anchor, to move the view left or right on the X axis from the ceter
@@ -244,6 +250,9 @@ public extension UIView {
         }
     }
     
+    
+//    MARK:- Anchors for setting width and height as constant or multiplied secific anchors
+    
     /// Apply constant width to width anchor of view
     /// - Parameter constant: width constant
     func anchorConstraintWidth(constant: CGFloat) {
@@ -297,6 +306,9 @@ public extension UIView {
         anchorConstraintHeight(anchor: anchorHeight, multiplier: multiplierHeight)
     }
     
+    
+//    MARK:- Clearing constraints
+    
     /// Remove all anchors applyed to the view
     func anchorRemoveConstraints() {
         var _superview = self.superview
@@ -318,6 +330,18 @@ public extension UIView {
         
         self.removeConstraints(self.constraints)
         self.translatesAutoresizingMaskIntoConstraints = true
+    }
+    
+}
+
+
+// MARK:- Extra functionalities
+
+public extension UIView {
+    
+    /// add an array of views on a view
+    func addSubviews(_ views: UIView...) {
+        views.forEach({addSubview($0)})
     }
     
 }
