@@ -186,11 +186,15 @@ override func viewDidLoad() {
 ```
 
 - - Extra
-- - - A) Add multiple views in one line
+- - - A) Enable/Disable activate state of constraint
+```swift
+
+```
+- - - B) Add multiple views in one line
 ```swift
     view.addSubviews(redView, blueView, yellowView, greenView)
 ```
-- - - B) KeyWindow
+- - - C) KeyWindow
 ```swift
 
     // get keywindow as optional (old ways UIApplication.shared.keyWindow)
@@ -201,10 +205,23 @@ override func viewDidLoad() {
 ```
 
 - - **Animations**
-If want to animate a specific anchor, don't worry, there is an easy way in this kit, just use the anchor you want and update it
+If want to animate a specific anchor, don't worry, there is an easy way in this kit, just use the anchor method anf pick return anchor you want and update it
 - - - Aniamte top anchor
 ```swift
+    // setup
+    // picked top anchor as return, can be used self so a return, self represents AnchoredConstraints struct with top, leading, bottom, trailing, width, height anchor properties, all of those properties can be manipulated/animated
+    
+    let blueViewtopAnchor = blueView.anchor(top: view.topAnchor, leading: view.leadingAnchor, bottom: nil, trailing: nil,
+                                            padding: .init(top: 0, left: 0, bottom: 0, right: 0),
+                                            size: .init(width: 100, height: 100)).top
+                                            
+    self.view.layoutIfNeeded()
 
+    // moves the bluew view down of the top anchor for 100 px after one sec and with duration of 5 sec
+    UIView.animate(withDuration: 5, delay: 1) {
+        blueViewtopAnchor?.constant = 100
+        self.view.layoutIfNeeded()
+    }
 ```
 
 

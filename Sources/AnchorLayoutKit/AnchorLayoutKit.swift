@@ -357,10 +357,12 @@ public extension NSLayoutConstraint {
         return self
     }
     
+    /// activate constraint
     func activate() {
         self.isActive = true
     }
     
+    /// deactivate constraint
     func deActivate() {
         self.isActive = false
     }
@@ -369,7 +371,7 @@ public extension NSLayoutConstraint {
 
 public extension UIWindow {
     
-    // returns optional keywindow
+    /// returns optional keywindow
     static var keyWindow: UIWindow? {
         if #available(iOS 13, *) {
             return UIApplication.shared.windows.first { $0.isKeyWindow }
