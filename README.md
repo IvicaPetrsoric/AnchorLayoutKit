@@ -237,6 +237,27 @@ Result:
         // do stuff
     }
 ```
+- - - D) out of the box you can get safeTopAnchor which represents top anchor which take in account safe area layout guide. Also the other anchor can be returned with safe area in account
+```swift
+    // safe area top anchor
+
+    view.safeTopAnchor
+    
+
+    // safe area leadnig anchor
+    
+    view.safeLeadingAnchor
+    
+    
+    // safe area bottom anchor
+
+    view.safeBottomAnchor
+    
+    
+    // safe area trailing anchor
+    
+    view.safeTrailingAnchor
+```
 
 - - **Animations**
 If want to animate a specific anchor, don't worry, there is an easy way in this kit, just use the anchor method anf pick return anchor you want and update it
@@ -258,10 +279,3 @@ If want to animate a specific anchor, don't worry, there is an easy way in this 
     }
 ```
 
-
-
-
-
-```swift
-
-```
