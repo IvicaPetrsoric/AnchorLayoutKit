@@ -32,6 +32,9 @@ override func viewDidLoad() {
     // implementation adding redView to fill whole view
 }
 ```
+<img src="https://github.com/IvicaPetrsoric/AnchorLayoutKit/blob/main/Readme%20resource/1.png" widht= 150 height = 300  hspace="0" />
+
+
 
 - - Old Way 
 ```swift
