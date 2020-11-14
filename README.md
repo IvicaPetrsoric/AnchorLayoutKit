@@ -190,7 +190,22 @@ override func viewDidLoad() {
 ```swift
     view.addSubviews(redView, blueView, yellowView, greenView)
 ```
-- - - B)
+- - - B) KeyWindow
+```swift
+
+    // get keywindow as optional (old ways UIApplication.shared.keyWindow)
+    
+    if let keyWindow = UIWindow.keyWindow {
+        // do stuff
+    }
+```
+
+- - **Animations**
+If want to animate a specific anchor, don't worry, there is an easy way in this kit, just use the anchor you want and update it
+- - - Aniamte top anchor
+```swift
+
+```
 
 
 

@@ -356,6 +356,14 @@ public extension NSLayoutConstraint {
         self.priority = priority
         return self
     }
+    
+    func activate() {
+        self.isActive = true
+    }
+    
+    func deActivate() {
+        self.isActive = false
+    }
 
 }
 
