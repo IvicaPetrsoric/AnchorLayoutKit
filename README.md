@@ -52,6 +52,7 @@ override func viewDidLoad() {
                    bottom: view.bottomAnchor, trailing: view.trailingAnchor)
 ```
 Result:
+
 <img src="https://github.com/IvicaPetrsoric/AnchorLayoutKit/blob/main/Readme%20resource/1.png" widht= 150 height = 300  hspace="0" />
 
 - - - B) Anchor to whole supper view
@@ -67,6 +68,7 @@ Result:
     redView.anchorFillSuperview(padding: .init(top: 0, left: 8, bottom: 0, right: 28))
 ```
 Result:
+
 <img src="https://github.com/IvicaPetrsoric/AnchorLayoutKit/blob/main/Readme%20resource/2.png" widht= 150 height = 300  hspace="0" />
 
 - - Adding view depending on other view 
@@ -103,6 +105,7 @@ Result:
                     size: .init(width: 64, height: 128))
 ```
 Result:
+
 <img src="https://github.com/IvicaPetrsoric/AnchorLayoutKit/blob/main/Readme%20resource/3.png" widht= 150 height = 300  hspace="0" />
 
 - - - C) Depending on other view, like red View but with centering on X axis (super view)
@@ -115,6 +118,7 @@ Result:
                     size: .init(width: 64, height: 128))
 ```
 Result:
+
 <img src="https://github.com/IvicaPetrsoric/AnchorLayoutKit/blob/main/Readme%20resource/4.png" widht= 150 height = 300  hspace="0" />
 
 - - - D) Depending on other view, like red View but with centering on Y axis (super view), padding is on trailing with positive padding
@@ -127,6 +131,7 @@ Result:
                     size: .init(width: 64, height: 128))
 ```
 Result:
+
 <img src="https://github.com/IvicaPetrsoric/AnchorLayoutKit/blob/main/Readme%20resource/5.png" widht= 150 height = 300  hspace="0" />
 
 - - - E) Depending on other view, like red View but with centering on X axis (red view), padding is on top anchor with positive padding
@@ -137,6 +142,7 @@ Result:
                     size: .init(width: 64, height: 128))
 ```
 Result:
+
 <img src="https://github.com/IvicaPetrsoric/AnchorLayoutKit/blob/main/Readme%20resource/6.png" widht= 150 height = 300  hspace="0" />
 
 - - - F) Depending on other view, like red View but with centering on X axis (red view) with padding to the right on x axis, padding is on top anchor with positive padding
@@ -147,6 +153,7 @@ Result:
                     size: .init(width: 64, height: 128))
 ```
 Result:
+
 <img src="https://github.com/IvicaPetrsoric/AnchorLayoutKit/blob/main/Readme%20resource/7.png" widht= 150 height = 300  hspace="0" />
 
 - - Centering View 
@@ -155,6 +162,7 @@ Result:
     blueView.anchorCenterSuperview(size: .init(width: 88, height: 88))
 ```
 Result:
+
 <img src="https://github.com/IvicaPetrsoric/AnchorLayoutKit/blob/main/Readme%20resource/8.png" widht= 150 height = 300  hspace="0" />
 
 - - - B) With secific size, and padding to the right and bit down
@@ -164,6 +172,7 @@ Result:
                                    constantY: 30)
 ```
 Result:
+
 <img src="https://github.com/IvicaPetrsoric/AnchorLayoutKit/blob/main/Readme%20resource/9.png" widht= 150 height = 300  hspace="0" />
 
 - - Setting specific sizes
@@ -202,6 +211,7 @@ Result:
     blueView.anchorConstraintHeight(constant: 80)
 ```
 Result:
+
 <img src="https://github.com/IvicaPetrsoric/AnchorLayoutKit/blob/main/Readme%20resource/10.png" widht= 150 height = 300  hspace="0" />
 
 - - Remove **ALL** applied constraints to specific view
