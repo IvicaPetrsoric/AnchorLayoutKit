@@ -5,12 +5,12 @@ import UIKit
 /// definition of anchors and sizes of constraints, used as return parameters
 public struct AnchoredConstraints {
     
-    var top: NSLayoutConstraint?
-    var leading: NSLayoutConstraint?
-    var bottom: NSLayoutConstraint?
-    var trailing: NSLayoutConstraint?
-    var width: NSLayoutConstraint?
-    var height: NSLayoutConstraint?
+    public var top: NSLayoutConstraint?
+    public var leading: NSLayoutConstraint?
+    public var bottom: NSLayoutConstraint?
+    public var trailing: NSLayoutConstraint?
+    public var width: NSLayoutConstraint?
+    public var height: NSLayoutConstraint?
 
 }
 
