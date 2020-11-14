@@ -32,9 +32,6 @@ override func viewDidLoad() {
     // implementation adding redView to fill whole view
 }
 ```
-<img src="https://github.com/IvicaPetrsoric/AnchorLayoutKit/blob/main/Readme%20resource/1.png" widht= 150 height = 300  hspace="0" />
-
-
 
 - - Old Way 
 ```swift
@@ -54,19 +51,23 @@ override func viewDidLoad() {
     redView.anchor(top: view.topAnchor, leading: view.leadingAnchor,
                    bottom: view.bottomAnchor, trailing: view.trailingAnchor)
 ```
+Result:
+<img src="https://github.com/IvicaPetrsoric/AnchorLayoutKit/blob/main/Readme%20resource/1.png" widht= 150 height = 300  hspace="0" />
+
 - - - B) Anchor to whole supper view
 ```swift
     // implementation adding redView to fill whole view 
     
     redView.anchorFillSuperview()
 ```
-
 - - - C) Anchor to whole supper view but taking safe area in account, also adding some padding to leading and trailing anchor
 ```swift
     // implementation adding redView to fill whole view 
     
     redView.anchorFillSuperview(padding: .init(top: 0, left: 8, bottom: 0, right: 28))
 ```
+Result:
+<img src="https://github.com/IvicaPetrsoric/AnchorLayoutKit/blob/main/Readme%20resource/2.png" widht= 150 height = 300  hspace="0" />
 
 - - Adding view depending on other view 
 - - - A) Depending on self.view
@@ -76,7 +77,6 @@ override func viewDidLoad() {
     redView.anchor(top: view.topAnchor, leading: view.leadingAnchor,
                    bottom: view.bottomAnchor, trailing: view.trailingAnchor)
 ```
-
 - - - B) Depending on other view, like red View
 ```swift
     // setup
@@ -102,6 +102,9 @@ override func viewDidLoad() {
                     padding: .init(top: 30, left: -14, bottom: 0, right: 0),
                     size: .init(width: 64, height: 128))
 ```
+Result:
+<img src="https://github.com/IvicaPetrsoric/AnchorLayoutKit/blob/main/Readme%20resource/3.png" widht= 150 height = 300  hspace="0" />
+
 - - - C) Depending on other view, like red View but with centering on X axis (super view)
 ```swift
     // blue view with anchor top on red view but center on x axis depending on super view
@@ -111,6 +114,9 @@ override func viewDidLoad() {
                     padding: .init(top: 30, left: 0, bottom: 0, right: 0),
                     size: .init(width: 64, height: 128))
 ```
+Result:
+<img src="https://github.com/IvicaPetrsoric/AnchorLayoutKit/blob/main/Readme%20resource/4.png" widht= 150 height = 300  hspace="0" />
+
 - - - D) Depending on other view, like red View but with centering on Y axis (super view), padding is on trailing with positive padding
 ```swift
     // Center on Y axis (super view), trailing anchor on red trailing and moved to left by 30 px
@@ -120,6 +126,9 @@ override func viewDidLoad() {
                     padding: .init(top: 0, left: 0, bottom: 0, right: 40),
                     size: .init(width: 64, height: 128))
 ```
+Result:
+<img src="https://github.com/IvicaPetrsoric/AnchorLayoutKit/blob/main/Readme%20resource/5.png" widht= 150 height = 300  hspace="0" />
+
 - - - E) Depending on other view, like red View but with centering on X axis (red view), padding is on top anchor with positive padding
 ```swift
     blueView.anchorCenterXToView(redView)
@@ -127,26 +136,36 @@ override func viewDidLoad() {
                     padding: .init(top: 60, left: 0, bottom: 0, right: 40),
                     size: .init(width: 64, height: 128))
 ```
+Result:
+<img src="https://github.com/IvicaPetrsoric/AnchorLayoutKit/blob/main/Readme%20resource/6.png" widht= 150 height = 300  hspace="0" />
 
-- - - F) Depending on other view, like red View but with centering on X axis (red view) with padding to the left on x axis, padding is on top anchor with positive padding
+- - - F) Depending on other view, like red View but with centering on X axis (red view) with padding to the right on x axis, padding is on top anchor with positive padding
 ```swift
     blueView.anchorCenterXToView(redView, constant: 40)
     blueView.anchor(top: redView.bottomAnchor, leading: nil, bottom: nil, trailing: nil,
                     padding: .init(top: 60, left: 0, bottom: 0, right: 40),
                     size: .init(width: 64, height: 128))
 ```
+Result:
+<img src="https://github.com/IvicaPetrsoric/AnchorLayoutKit/blob/main/Readme%20resource/7.png" widht= 150 height = 300  hspace="0" />
 
 - - Centering View 
 - - - A) With secific size
 ```swift
     blueView.anchorCenterSuperview(size: .init(width: 88, height: 88))
 ```
+Result:
+<img src="https://github.com/IvicaPetrsoric/AnchorLayoutKit/blob/main/Readme%20resource/8.png" widht= 150 height = 300  hspace="0" />
+
 - - - B) With secific size, and padding to the right and bit down
 ```swift
     blueView.anchorCenterSuperview(size: .init(width: 88, height: 88),
                                    constantX: 40,
                                    constantY: 30)
 ```
+Result:
+<img src="https://github.com/IvicaPetrsoric/AnchorLayoutKit/blob/main/Readme%20resource/9.png" widht= 150 height = 300  hspace="0" />
+
 - - Setting specific sizes
 - - - A) Setting with/hegith/both as constants
 ```swift
@@ -182,6 +201,8 @@ override func viewDidLoad() {
     
     blueView.anchorConstraintHeight(constant: 80)
 ```
+Result:
+<img src="https://github.com/IvicaPetrsoric/AnchorLayoutKit/blob/main/Readme%20resource/10.png" widht= 150 height = 300  hspace="0" />
 
 - - Remove **ALL** applied constraints to specific view
 ```swift
