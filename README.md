@@ -25,7 +25,7 @@ Personal live applications on App Store builded with this kit:
 - Swift 5
 
 ## **Installation**
-**Swift Package Manager**
+### Swift Package Manager
 
 The Swift Package Manager is a tool for automating the distribution of Swift code and is integrated into the swift compiler. It is in early development, but AnchorLayoutKit does support its use on supported platforms.
 
@@ -38,7 +38,8 @@ Once you have your Swift package set up, adding AnchorLayoutKit as a dependency 
 ```
 
 ## **Usage**
-Adding simple red UIView element on the view, defining anchors, size and padding
+Add simple red UIView element on the view, defining anchors, size and padding
+
 ```swift
 override func viewDidLoad() {
     super.viewDidLoad()
@@ -50,13 +51,13 @@ override func viewDidLoad() {
 
     view.addSubview(redView)
     
-    // implementation adding redView to fill whole view
+    // implementation 
 }
 ```
 
 - Currently with Swift 
 ```swift
-    // implementation adding redView to fill whole view
+    // add redView to fill whole view
 
     redView.translatesAutoresizingMaskIntoConstraints = false
     redView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
@@ -64,43 +65,78 @@ override func viewDidLoad() {
     redView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
     redView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
 ```
-- Using AnchorLayoutKit
+- With AnchorLayoutKit
 - - A) Anchor to whole supper view
-```swift
-    // implementation adding redView to fill whole view 
 
+<table>
+  <tr>
+    <th width="30%">Implementation</th>
+    <th width="30%">Result</th>
+  </tr>
+  <tr>
+    <td>Add redView to fill whole view</td>
+    <th rowspan="2"><img src="https://github.com/IvicaPetrsoric/AnchorLayoutKit/blob/main/Readme%20resource/1.png" height = 300></th>
+  </tr>
+  <tr>
+    <td><div class="highlight highlight-source-swift"><pre>
+    
+```swift
     redView.anchor(top: view.topAnchor, leading: view.leadingAnchor,
                    bottom: view.bottomAnchor, trailing: view.trailingAnchor)
 ```
-Result:
 
-<img src="https://github.com/IvicaPetrsoric/AnchorLayoutKit/blob/main/Readme%20resource/1.png" widht= 150 height = 300  hspace="0" />
-
+  </tr>
+</table>
+     
 - - B) Anchor to whole supper view
+     
 ```swift
-    // implementation adding redView to fill whole view 
+    // add redView to fill whole view 
     
     redView.anchorFillSuperview()
 ```
 - - C) Anchor to whole supper view but taking safe area in account, also adding some padding to leading and trailing anchor
-```swift
-    // implementation adding redView to fill whole view 
+
+<table>
+  <tr>
+    <th width="30%">Implementation</th>
+    <th width="30%">Result</th>
+  </tr>
+  <tr>
+    <td>Add redView to fill whole view (safe area included) with padding left and right</td>
+    <th rowspan="2"><img src="https://github.com/IvicaPetrsoric/AnchorLayoutKit/blob/main/Readme%20resource/2.png" height = 300></th>
+  </tr>
+  <tr>
+    <td><div class="highlight highlight-source-swift"><pre>
     
+```swift
     redView.anchorFillSuperview(padding: .init(top: 0, left: 8, bottom: 0, right: 28))
 ```
-Result:
-
-<img src="https://github.com/IvicaPetrsoric/AnchorLayoutKit/blob/main/Readme%20resource/2.png" widht= 150 height = 300  hspace="0" />
+  </tr>
+</table>
 
 - Adding view depending on other view 
 - - A) Depending on self.view
 ```swift
-    // implementation adding redView to fill whole view but taking safe area in account
+    // Add redView to fill whole view but taking safe area in account
 
     redView.anchor(top: view.topAnchor, leading: view.leadingAnchor,
                    bottom: view.bottomAnchor, trailing: view.trailingAnchor)
 ```
 - - B) Depending on other view, like red View
+
+<table>
+  <tr>
+    <th width="30%">Implementation</th>
+    <th width="30%">Result</th>
+  </tr>
+  <tr>
+    <td>Depending on other view, like red View with padding</td>
+    <th rowspan="9"><img src="https://github.com/IvicaPetrsoric/AnchorLayoutKit/blob/main/Readme%20resource/3.png"></th>
+  </tr>
+  <tr>
+    <td><div class="highlight highlight-source-swift"><pre>
+    
 ```swift
     // setup
     
@@ -119,82 +155,152 @@ Result:
                    padding: .init(top: 20, left: 40, bottom: 0, right: 0),
                    size: .init(width: 48, height: 48))
                    
-    // set blue view depending on the red view (top denepnding on bottom of red view, leading depending on trailing of red view) with extra padding (top in plus, left in minus) and specific size
+    // set blue view depending on the red view (top denepnding on bottom of red view, leading depending on 
+    // trailing of red view) with extra padding (top in plus, left in minus) and specific size
     
     blueView.anchor(top: redView.bottomAnchor, leading: redView.trailingAnchor, bottom: nil, trailing: nil,
                     padding: .init(top: 30, left: -14, bottom: 0, right: 0),
-                    size: .init(width: 64, height: 128))
+                    size: .init(width: 64, height: 128)) 
 ```
+    
+   </tr>
+</table>
 Result:
 
-<img src="https://github.com/IvicaPetrsoric/AnchorLayoutKit/blob/main/Readme%20resource/3.png" widht= 150 height = 300  hspace="0" />
-
 - - C) Depending on other view, like red View but with centering on X axis (super view)
-```swift
-    // blue view with anchor top on red view but center on x axis depending on super view
+
+<table>
+  <tr>
+    <th width="30%">Implementation</th>
+    <th width="30%">Result</th>
+  </tr>
+  <tr>
+    <td>Blue view with anchor top on red view but center on x axis depending on super view</td>
+    <th rowspan="2"><img src="https://github.com/IvicaPetrsoric/AnchorLayoutKit/blob/main/Readme%20resource/4.png" height = 300></th>
+  </tr>
+  <tr>
+    <td><div class="highlight highlight-source-swift"><pre>
     
+```swift
     blueView.anchorCenterXToSuperview()
     blueView.anchor(top: redView.bottomAnchor, leading: nil, bottom: nil, trailing: nil,
                     padding: .init(top: 30, left: 0, bottom: 0, right: 0),
                     size: .init(width: 64, height: 128))
 ```
-Result:
-
-<img src="https://github.com/IvicaPetrsoric/AnchorLayoutKit/blob/main/Readme%20resource/4.png" widht= 150 height = 300  hspace="0" />
+  </tr>
+</table>
 
 - - D) Depending on other view, like red View but with centering on Y axis (super view), padding is on trailing with positive padding
-```swift
-    // Center on Y axis (super view), trailing anchor on red trailing and moved to left by 30 px
 
+<table>
+  <tr>
+    <th width="30%">Implementation</th>
+    <th width="30%">Result</th>
+  </tr>
+  <tr>
+    <td>Center on Y axis (super view), trailing anchor on red trailing and moved to left by 40 px</td>
+    <th rowspan="2"><img src="https://github.com/IvicaPetrsoric/AnchorLayoutKit/blob/main/Readme%20resource/5.png" height = 300></th>
+  </tr>
+  <tr>
+    <td><div class="highlight highlight-source-swift"><pre>
+    
+```swift
     blueView.anchorCenterYToSuperview()
     blueView.anchor(top: nil, leading: nil, bottom: nil, trailing: redView.trailingAnchor,
                     padding: .init(top: 0, left: 0, bottom: 0, right: 40),
                     size: .init(width: 64, height: 128))
 ```
-Result:
-
-<img src="https://github.com/IvicaPetrsoric/AnchorLayoutKit/blob/main/Readme%20resource/5.png" widht= 150 height = 300  hspace="0" />
+  </tr>
+</table>
 
 - - - E) Depending on other view, like red View but with centering on X axis (red view), padding is on top anchor with positive padding
+
+<table>
+  <tr>
+    <th width="30%">Implementation</th>
+    <th width="30%">Result</th>
+  </tr>
+  <tr>
+    <td>Center X to red view</td>
+    <th rowspan="2"><img src="https://github.com/IvicaPetrsoric/AnchorLayoutKit/blob/main/Readme%20resource/6.png" height = 300></th>
+  </tr>
+  <tr>
+    <td><div class="highlight highlight-source-swift"><pre>
+    
 ```swift
     blueView.anchorCenterXToView(redView)
     blueView.anchor(top: redView.bottomAnchor, leading: nil, bottom: nil, trailing: nil,
                     padding: .init(top: 60, left: 0, bottom: 0, right: 40),
                     size: .init(width: 64, height: 128))
 ```
-Result:
-
-<img src="https://github.com/IvicaPetrsoric/AnchorLayoutKit/blob/main/Readme%20resource/6.png" widht= 150 height = 300  hspace="0" />
+  </tr>
+</table>
 
 - - F) Depending on other view, like red View but with centering on X axis (red view) with padding to the right on x axis, padding is on top anchor with positive padding
+
+<table>
+  <tr>
+    <th width="30%">Implementation</th>
+    <th width="30%">Result</th>
+  </tr>
+  <tr>
+    <td>Center X to red view with padding 40px</td>
+    <th rowspan="2"><img src="https://github.com/IvicaPetrsoric/AnchorLayoutKit/blob/main/Readme%20resource/7.png" height = 300></th>
+  </tr>
+  <tr>
+    <td><div class="highlight highlight-source-swift"><pre>
+    
 ```swift
     blueView.anchorCenterXToView(redView, constant: 40)
     blueView.anchor(top: redView.bottomAnchor, leading: nil, bottom: nil, trailing: nil,
                     padding: .init(top: 60, left: 0, bottom: 0, right: 40),
                     size: .init(width: 64, height: 128))
 ```
-Result:
-
-<img src="https://github.com/IvicaPetrsoric/AnchorLayoutKit/blob/main/Readme%20resource/7.png" widht= 150 height = 300  hspace="0" />
+  </tr>
+</table>
 
 - Centering View 
 - - A) With secific size
+
+<table>
+  <tr>
+    <th width="30%">Implementation</th>
+    <th width="30%">Result</th>
+  </tr>
+  <tr>
+    <td>Set size to 40x40</td>
+    <th rowspan="2"><img src="https://github.com/IvicaPetrsoric/AnchorLayoutKit/blob/main/Readme%20resource/8.png" height = 300></th>
+  </tr>
+  <tr>
+    <td><div class="highlight highlight-source-swift"><pre>
+    
 ```swift
     blueView.anchorCenterSuperview(size: .init(width: 88, height: 88))
 ```
-Result:
-
-<img src="https://github.com/IvicaPetrsoric/AnchorLayoutKit/blob/main/Readme%20resource/8.png" widht= 150 height = 300  hspace="0" />
+  </tr>
+</table>
 
 - - - B) With secific size, and padding to the right and bit down
+
+<table>
+  <tr>
+    <th width="30%">Implementation</th>
+    <th width="30%">Result</th>
+  </tr>
+  <tr>
+    <td>Set size to 88x88, centered and padding on X and Y from center</td>
+    <th rowspan="2"><img src="https://github.com/IvicaPetrsoric/AnchorLayoutKit/blob/main/Readme%20resource/9.png" height = 300></th>
+  </tr>
+  <tr>
+    <td><div class="highlight highlight-source-swift"><pre>
+    
 ```swift
     blueView.anchorCenterSuperview(size: .init(width: 88, height: 88),
                                    constantX: 40,
                                    constantY: 30)
 ```
-Result:
-
-<img src="https://github.com/IvicaPetrsoric/AnchorLayoutKit/blob/main/Readme%20resource/9.png" widht= 150 height = 300  hspace="0" />
+  </tr>
+</table>
 
 - Setting specific sizes
 - - A) Setting with/hegith/both as constants
@@ -217,13 +323,25 @@ Result:
     blueView.anchorConstraintSize(constantX: 80, constantY: 80)
 ```
 - - B) Setting width/height depending on a specific widht/height anchor of view
-```swift
 
+<table>
+  <tr>
+    <th width="30%">Implementation</th>
+    <th width="30%">Result</th>
+  </tr>
+  <tr>
+    <td>Set width anchor to red view anchor and multiplied wtih 2 (default 1.0)</td>
+    <th rowspan="2"><img src="https://github.com/IvicaPetrsoric/AnchorLayoutKit/blob/main/Readme%20resource/10.png"></th>
+  </tr>
+  <tr>
+    <td><div class="highlight highlight-source-swift"><pre>
+    
+```swift
     // setup 
     blueView.anchor(top: redView.bottomAnchor, leading: view.leadingAnchor, bottom: nil, trailing: nil,
                     padding: .init(top: 60, left: 60, bottom: 0, right: 0))
                     
-    // set width anchor to red view anchor and multiplied wtih 2 (default 1.0)
+    // set width to anchor and multiplie it
     
     blueView.anchorConstraintWidth(anchor: redView.widthAnchor, multiplier: 2)
 
@@ -231,9 +349,8 @@ Result:
     
     blueView.anchorConstraintHeight(constant: 80)
 ```
-Result:
-
-<img src="https://github.com/IvicaPetrsoric/AnchorLayoutKit/blob/main/Readme%20resource/10.png" widht= 150 height = 300  hspace="0" />
+  </tr>
+</table>
 
 - Remove **ALL** applied constraints to specific view
 ```swift
