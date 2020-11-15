@@ -15,6 +15,27 @@ Look no further because **AnchorLayoutKit** will help you to improve productivit
 New spin off application from Recolor also builded with this kit:
 - [RBN (Recolor By Numbers), download it on App Store](https://apps.apple.com/us/app/recolor-by-numbers/id1411398756)
 
+Personal live applications on App Store builded with this kit:
+ - Boxline, [Download](https://apps.apple.com/us/app/boxline/id1308313538?ls=1)
+ - FDMRI, Manual dexterity exam for enrollment at the Faculty of Dental Medicine of Rijeka. Currently under NDA. (Download via testFlgith)
+
+## **Requirements**
+- iOS 10+
+- Xcode 11+
+- Swift 5
+
+## **Installation**
+**Swift Package Manager**
+
+The Swift Package Manager is a tool for automating the distribution of Swift code and is integrated into the swift compiler. It is in early development, but AnchorLayoutKit does support its use on supported platforms.
+
+Once you have your Swift package set up, adding AnchorLayoutKit as a dependency is as easy as adding it to the dependencies value of your Package.swift.
+
+```swift
+    dependencies: [
+        .package(url: "https://github.com/IvicaPetrsoric/AnchorLayoutKit", .upToNextMajor(from: "1.0.6"))
+    ]
+```
 
 ## **Usage**
 - Adding simple red UIView element on the view, defining anchors, size and padding
