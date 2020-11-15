@@ -75,10 +75,10 @@ override func viewDidLoad() {
   </tr>
   <tr>
     <td>Add redView to fill whole view</td>
-    <th rowspan="2"><img src="https://github.com/IvicaPetrsoric/AnchorLayoutKit/blob/main/Readme%20resource/1.png" height = 300></th>
+    <th rowspan="2"><img src="https://github.com/IvicaPetrsoric/AnchorLayoutKit/blob/main/Readme%20resource/1.png" height = 200></th>
   </tr>
   <tr>
-    <td><div class="highlight highlight-source-swift"><pre>
+    <td><div class="highlight highlight-source-swift" height = 200><pre>
     
 ```swift
     redView.anchor(top: view.topAnchor, leading: view.leadingAnchor,
@@ -104,10 +104,10 @@ override func viewDidLoad() {
   </tr>
   <tr>
     <td>Add redView to fill whole view (safe area included) with padding left and right</td>
-    <th rowspan="2"><img src="https://github.com/IvicaPetrsoric/AnchorLayoutKit/blob/main/Readme%20resource/2.png" height = 300></th>
+    <th rowspan="2"><img src="https://github.com/IvicaPetrsoric/AnchorLayoutKit/blob/main/Readme%20resource/2.png" height = 200></th>
   </tr>
   <tr>
-    <td><div class="highlight highlight-source-swift"><pre>
+    <td><div class="highlight highlight-source-swift" height = 200><pre>
     
 ```swift
     redView.anchorFillSuperview(padding: .init(top: 0, left: 8, bottom: 0, right: 28))
@@ -149,16 +149,20 @@ override func viewDidLoad() {
     view.addSubview(redView)
     view.addSubview(blueView)
     
-    // set red view somewhere on the view, with padding on top and leading anchor and specific size
+    // set red view somewhere on the view, with padding on top 
+    // and leading anchor and specific size
     
-    redView.anchor(top: view.topAnchor, leading: view.leadingAnchor, bottom: nil, trailing: nil,
+    redView.anchor(top: view.topAnchor, leading: view.leadingAnchor, 
+                   bottom: nil, trailing: nil,
                    padding: .init(top: 20, left: 40, bottom: 0, right: 0),
                    size: .init(width: 48, height: 48))
                    
-    // set blue view depending on the red view (top denepnding on bottom of red view, leading depending on 
-    // trailing of red view) with extra padding (top in plus, left in minus) and specific size
+    // set blue view depending on the red view (top denepnding on bottom of red view, 
+    // leading depending on trailing of red view)
+    // with extra padding (top in plus, left in minus) and specific size
     
-    blueView.anchor(top: redView.bottomAnchor, leading: redView.trailingAnchor, bottom: nil, trailing: nil,
+    blueView.anchor(top: redView.bottomAnchor, leading: redView.trailingAnchor,
+                    bottom: nil, trailing: nil,
                     padding: .init(top: 30, left: -14, bottom: 0, right: 0),
                     size: .init(width: 64, height: 128)) 
 ```
@@ -176,10 +180,10 @@ Result:
   </tr>
   <tr>
     <td>Blue view with anchor top on red view but center on x axis depending on super view</td>
-    <th rowspan="2"><img src="https://github.com/IvicaPetrsoric/AnchorLayoutKit/blob/main/Readme%20resource/4.png" height = 300></th>
+    <th rowspan="2"><img src="https://github.com/IvicaPetrsoric/AnchorLayoutKit/blob/main/Readme%20resource/4.png" height = 200></th>
   </tr>
   <tr>
-    <td><div class="highlight highlight-source-swift"><pre>
+    <td><div class="highlight highlight-source-swift" height = 200><pre>
     
 ```swift
     blueView.anchorCenterXToSuperview()
@@ -199,10 +203,10 @@ Result:
   </tr>
   <tr>
     <td>Center on Y axis (super view), trailing anchor on red trailing and moved to left by 40 px</td>
-    <th rowspan="2"><img src="https://github.com/IvicaPetrsoric/AnchorLayoutKit/blob/main/Readme%20resource/5.png" height = 300></th>
+    <th rowspan="2"><img src="https://github.com/IvicaPetrsoric/AnchorLayoutKit/blob/main/Readme%20resource/5.png" height = 200></th>
   </tr>
   <tr>
-    <td><div class="highlight highlight-source-swift"><pre>
+    <td><div class="highlight highlight-source-swift" height = 200><pre>
     
 ```swift
     blueView.anchorCenterYToSuperview()
@@ -222,10 +226,10 @@ Result:
   </tr>
   <tr>
     <td>Center X to red view</td>
-    <th rowspan="2"><img src="https://github.com/IvicaPetrsoric/AnchorLayoutKit/blob/main/Readme%20resource/6.png" height = 300></th>
+    <th rowspan="2"><img src="https://github.com/IvicaPetrsoric/AnchorLayoutKit/blob/main/Readme%20resource/6.png" height = 200></th>
   </tr>
   <tr>
-    <td><div class="highlight highlight-source-swift"><pre>
+    <td><div class="highlight highlight-source-swift" height = 200><pre>
     
 ```swift
     blueView.anchorCenterXToView(redView)
@@ -245,10 +249,10 @@ Result:
   </tr>
   <tr>
     <td>Center X to red view with padding 40px</td>
-    <th rowspan="2"><img src="https://github.com/IvicaPetrsoric/AnchorLayoutKit/blob/main/Readme%20resource/7.png" height = 300></th>
+    <th rowspan="2"><img src="https://github.com/IvicaPetrsoric/AnchorLayoutKit/blob/main/Readme%20resource/7.png" height = 200></th>
   </tr>
   <tr>
-    <td><div class="highlight highlight-source-swift"><pre>
+    <td><div class="highlight highlight-source-swift" height = 200><pre>
     
 ```swift
     blueView.anchorCenterXToView(redView, constant: 40)
@@ -269,10 +273,10 @@ Result:
   </tr>
   <tr>
     <td>Set size to 40x40</td>
-    <th rowspan="2"><img src="https://github.com/IvicaPetrsoric/AnchorLayoutKit/blob/main/Readme%20resource/8.png" height = 300></th>
+    <th rowspan="2"><img src="https://github.com/IvicaPetrsoric/AnchorLayoutKit/blob/main/Readme%20resource/8.png" height = 200></th>
   </tr>
   <tr>
-    <td><div class="highlight highlight-source-swift"><pre>
+    <td><div class="highlight highlight-source-swift" height = 200><pre>
     
 ```swift
     blueView.anchorCenterSuperview(size: .init(width: 88, height: 88))
@@ -289,10 +293,10 @@ Result:
   </tr>
   <tr>
     <td>Set size to 88x88, centered and padding on X and Y from center</td>
-    <th rowspan="2"><img src="https://github.com/IvicaPetrsoric/AnchorLayoutKit/blob/main/Readme%20resource/9.png" height = 300></th>
+    <th rowspan="2"><img src="https://github.com/IvicaPetrsoric/AnchorLayoutKit/blob/main/Readme%20resource/9.png" height = 200></th>
   </tr>
   <tr>
-    <td><div class="highlight highlight-source-swift"><pre>
+    <td><div class="highlight highlight-source-swift" height = 200><pre>
     
 ```swift
     blueView.anchorCenterSuperview(size: .init(width: 88, height: 88),
@@ -338,7 +342,8 @@ Result:
     
 ```swift
     // setup 
-    blueView.anchor(top: redView.bottomAnchor, leading: view.leadingAnchor, bottom: nil, trailing: nil,
+    blueView.anchor(top: redView.bottomAnchor, leading: view.leadingAnchor, 
+                    bottom: nil, trailing: nil,
                     padding: .init(top: 60, left: 60, bottom: 0, right: 0))
                     
     // set width to anchor and multiplie it
@@ -400,9 +405,12 @@ Result:
 - **Animations** - If want to animate a specific anchor, don't worry, there is an easy way in this kit, just use the anchor method anf pick return anchor you want and update it. In the following expample top anchor is animated
 ```swift
     // setup
-    // picked top anchor as return, can be used self so a return, self represents AnchoredConstraints struct with top, leading, bottom, trailing, width, height anchor properties, all of those properties can be manipulated/animated
+    // picked top anchor as return, can be used self so a return, 
+    // self represents AnchoredConstraints struct with top, leading, bottom, trailing,
+    // width, height anchor properties, all of those properties can be manipulated/animated
     
-    let blueViewtopAnchor = blueView.anchor(top: view.topAnchor, leading: view.leadingAnchor, bottom: nil, trailing: nil,
+    let blueViewtopAnchor = blueView.anchor(top: view.topAnchor, leading: view.leadingAnchor, 
+                                            bottom: nil, trailing: nil,
                                             padding: .init(top: 0, left: 0, bottom: 0, right: 0),
                                             size: .init(width: 100, height: 100)).top
                                             
