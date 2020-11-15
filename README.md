@@ -38,7 +38,7 @@ Once you have your Swift package set up, adding AnchorLayoutKit as a dependency 
 ```
 
 ## **Usage**
-- Adding simple red UIView element on the view, defining anchors, size and padding
+Adding simple red UIView element on the view, defining anchors, size and padding
 ```swift
 override func viewDidLoad() {
     super.viewDidLoad()
@@ -54,7 +54,7 @@ override func viewDidLoad() {
 }
 ```
 
-- - Old Way 
+- Currently with Swift 
 ```swift
     // implementation adding redView to fill whole view
 
@@ -64,8 +64,8 @@ override func viewDidLoad() {
     redView.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
     redView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
 ```
-- - **NEW WAY**
-- - - A) Anchor to whole supper view
+- Using AnchorLayoutKit
+- - A) Anchor to whole supper view
 ```swift
     // implementation adding redView to fill whole view 
 
@@ -76,13 +76,13 @@ Result:
 
 <img src="https://github.com/IvicaPetrsoric/AnchorLayoutKit/blob/main/Readme%20resource/1.png" widht= 150 height = 300  hspace="0" />
 
-- - - B) Anchor to whole supper view
+- - B) Anchor to whole supper view
 ```swift
     // implementation adding redView to fill whole view 
     
     redView.anchorFillSuperview()
 ```
-- - - C) Anchor to whole supper view but taking safe area in account, also adding some padding to leading and trailing anchor
+- - C) Anchor to whole supper view but taking safe area in account, also adding some padding to leading and trailing anchor
 ```swift
     // implementation adding redView to fill whole view 
     
@@ -92,15 +92,15 @@ Result:
 
 <img src="https://github.com/IvicaPetrsoric/AnchorLayoutKit/blob/main/Readme%20resource/2.png" widht= 150 height = 300  hspace="0" />
 
-- - Adding view depending on other view 
-- - - A) Depending on self.view
+- Adding view depending on other view 
+- - A) Depending on self.view
 ```swift
     // implementation adding redView to fill whole view but taking safe area in account
 
     redView.anchor(top: view.topAnchor, leading: view.leadingAnchor,
                    bottom: view.bottomAnchor, trailing: view.trailingAnchor)
 ```
-- - - B) Depending on other view, like red View
+- - B) Depending on other view, like red View
 ```swift
     // setup
     
@@ -129,7 +129,7 @@ Result:
 
 <img src="https://github.com/IvicaPetrsoric/AnchorLayoutKit/blob/main/Readme%20resource/3.png" widht= 150 height = 300  hspace="0" />
 
-- - - C) Depending on other view, like red View but with centering on X axis (super view)
+- - C) Depending on other view, like red View but with centering on X axis (super view)
 ```swift
     // blue view with anchor top on red view but center on x axis depending on super view
     
@@ -142,7 +142,7 @@ Result:
 
 <img src="https://github.com/IvicaPetrsoric/AnchorLayoutKit/blob/main/Readme%20resource/4.png" widht= 150 height = 300  hspace="0" />
 
-- - - D) Depending on other view, like red View but with centering on Y axis (super view), padding is on trailing with positive padding
+- - D) Depending on other view, like red View but with centering on Y axis (super view), padding is on trailing with positive padding
 ```swift
     // Center on Y axis (super view), trailing anchor on red trailing and moved to left by 30 px
 
@@ -166,7 +166,7 @@ Result:
 
 <img src="https://github.com/IvicaPetrsoric/AnchorLayoutKit/blob/main/Readme%20resource/6.png" widht= 150 height = 300  hspace="0" />
 
-- - - F) Depending on other view, like red View but with centering on X axis (red view) with padding to the right on x axis, padding is on top anchor with positive padding
+- - F) Depending on other view, like red View but with centering on X axis (red view) with padding to the right on x axis, padding is on top anchor with positive padding
 ```swift
     blueView.anchorCenterXToView(redView, constant: 40)
     blueView.anchor(top: redView.bottomAnchor, leading: nil, bottom: nil, trailing: nil,
@@ -177,8 +177,8 @@ Result:
 
 <img src="https://github.com/IvicaPetrsoric/AnchorLayoutKit/blob/main/Readme%20resource/7.png" widht= 150 height = 300  hspace="0" />
 
-- - Centering View 
-- - - A) With secific size
+- Centering View 
+- - A) With secific size
 ```swift
     blueView.anchorCenterSuperview(size: .init(width: 88, height: 88))
 ```
@@ -196,8 +196,8 @@ Result:
 
 <img src="https://github.com/IvicaPetrsoric/AnchorLayoutKit/blob/main/Readme%20resource/9.png" widht= 150 height = 300  hspace="0" />
 
-- - Setting specific sizes
-- - - A) Setting with/hegith/both as constants
+- Setting specific sizes
+- - A) Setting with/hegith/both as constants
 ```swift
     // setup
     
@@ -216,7 +216,7 @@ Result:
     
     blueView.anchorConstraintSize(constantX: 80, constantY: 80)
 ```
-- - - B) Setting width/height depending on a specific widht/height anchor of view
+- - B) Setting width/height depending on a specific widht/height anchor of view
 ```swift
 
     // setup 
@@ -235,21 +235,21 @@ Result:
 
 <img src="https://github.com/IvicaPetrsoric/AnchorLayoutKit/blob/main/Readme%20resource/10.png" widht= 150 height = 300  hspace="0" />
 
-- - Remove **ALL** applied constraints to specific view
+- Remove **ALL** applied constraints to specific view
 ```swift
     blueView.anchorRemoveConstraints()
 ```
 
-- - Extra
-- - - A) Enable/Disable activate state of constraint
+- Extra
+- - A) Enable/Disable activate state of constraint
 ```swift
 
 ```
-- - - B) Add multiple views in one line
+- - B) Add multiple views in one line
 ```swift
     view.addSubviews(redView, blueView, yellowView, greenView)
 ```
-- - - C) KeyWindow
+- - C) KeyWindow
 ```swift
 
     // get keywindow as optional (old ways UIApplication.shared.keyWindow)
@@ -258,7 +258,7 @@ Result:
         // do stuff
     }
 ```
-- - - D) out of the box you can get safeTopAnchor which represents top anchor which take in account safe area layout guide. Also the other anchor can be returned with safe area in account
+- - D) out of the box you can get safeTopAnchor which represents top anchor which take in account safe area layout guide. Also the other anchor can be returned with safe area in account
 ```swift
     // safe area top anchor
 
@@ -280,7 +280,7 @@ Result:
     view.safeTrailingAnchor
 ```
 
-- - **Animations** - If want to animate a specific anchor, don't worry, there is an easy way in this kit, just use the anchor method anf pick return anchor you want and update it. In the following expample top anchor is animated
+- **Animations** - If want to animate a specific anchor, don't worry, there is an easy way in this kit, just use the anchor method anf pick return anchor you want and update it. In the following expample top anchor is animated
 ```swift
     // setup
     // picked top anchor as return, can be used self so a return, self represents AnchoredConstraints struct with top, leading, bottom, trailing, width, height anchor properties, all of those properties can be manipulated/animated
