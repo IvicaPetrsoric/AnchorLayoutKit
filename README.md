@@ -213,7 +213,7 @@ Result:
   </tr>
 </table>
 
-- - - E) Depending on other view, like red View but with centering on X axis (red view), padding is on top anchor with positive padding
+- - E) Depending on other view, like red View but with centering on X axis (red view), padding is on top anchor with positive padding
 
 <table>
   <tr>
@@ -280,7 +280,7 @@ Result:
   </tr>
 </table>
 
-- - - B) With secific size, and padding to the right and bit down
+- - B) With secific size, and padding to the right and bit down
 
 <table>
   <tr>
