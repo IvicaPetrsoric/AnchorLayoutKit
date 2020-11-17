@@ -17,7 +17,7 @@ New spin off application from Recolor also builded with this kit:
 
 Personal live applications on App Store builded with this kit:
  - Boxline, [Download](https://apps.apple.com/us/app/boxline/id1308313538?ls=1)
- - FDMRI, Manual dexterity exam for enrollment at the Faculty of Dental Medicine of Rijeka. Currently under NDA. (Download via testFlight)
+ - FDMRI, Manual dexterity exam for enrollment at the Faculty of Dental Medicine of Rijeka. [Download](https://apps.apple.com/us/app/fdmri/id1518196339?ign-mpt=uo%3D4). Req ID for entering app.
 
 ## **Requirements**
 - iOS 10+
